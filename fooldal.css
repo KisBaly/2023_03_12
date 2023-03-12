@@ -1,0 +1,47 @@
+body
+{
+    background-color: black;
+    color: black;
+    
+}
+
+#kozep
+{
+    text-align: center;
+}
+
+#gomb
+{
+    background-color: black;
+    border: none;
+    color: black;
+}
+#gomb:hover
+{
+    box-shadow: 0.5px 0.5px 0.5px 0.5px white;
+}
+
+#elrak
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: black;
+    border: none;
+    color: rgb(3, 3, 3);
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+a:hover
+{
+    text-decoration: none;
+    color: black;
+}
+a::after
+{
+    text-decoration: none;
+    color: black;
+}
