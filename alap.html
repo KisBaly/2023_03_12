@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="alap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="alap.js"></script>
+    <title>4MŐ34</title>
+</head>
+<body>
+
+  <br>
+  <video autoplay muted loop id="myVideo">
+    <source src="moon-crescent-moewalls.com.mp4" type="video/mp4">
+  </video>
+      </div>
+      <div class="container">
+        <!-- Stack the columns on mobile by making one full-dth and the other half-width -->
+        <div class="row">
+          <div class="col-md-8">
+            <input type="button" value="Generálás" data-bs-toggle="modal" href="#exampleModalToggle" id="gomb2">
+          <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Adaja meg a paramétereket a játék kezdéséhez!</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="gombok">
+                    <br><br>
+                    <label for="sor">SOROK: </label>
+                    <input type="number" id = "sor" placeholder="Adja meg hogy háhy soros legyen a tábla" min="3" max = "15" name="sor"> </input>
+                    <br><br>
+                    <label for="oszlop">OSZLOP: </label>
+                    <input type="number" id = "oszlop" placeholder="Adja meg hogy háhy oszlopos legyen a tábla"  min="3" max = "15" name="oszlop"> </input>
+                    <br><br>
+                    <h1>Játékos beállítások:</h1>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col">
+                          <form>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Adja meg az "X" játékos nevét:</label>
+                              <input type="email" class="form-control" id="nevx" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Adja meg az "O" játékos nevét:</label>
+                              <input type="email" class="form-control" id="nevy" aria-describedby="emailHelp">
+                            </div>
+                            <input type="button" value="Mentés" onclick="Nevmentes()" id="gomb1" class="gomb1">
+                          </form>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label"><a href="csalokodok.html">Csalókód:</a></label>
+                            <input type="email" class="form-control" id="csalokod" aria-describedby="emailHelp">
+                            <br>
+                            <input type="button" value="Ok" onclick="csalokodok()" id="gomb1" class="gomb1">
+                          </div> 
+                        </div>
+                      </div>
+                      </div>
+                    <br><br>
+                    <input type="button" value="Generálás" onclick="TablaGeneralas()" id="gomb3">
+                    <br><br>
+                    </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <input type="button" value="Új játszma" data-bs-toggle="modal" onclick="TablaGeneralas()" id="gomb2">
+          </div>
+        </div>
+        <div id="tablazat">
+        <div class="row">
+          <div class="col-6">
+            <div id = "eredmeny" class="center">
+            </div>
+          </div>
+          <div class="col-6">
+            <br><br><br><br><br><br><br>
+            <h1 id="h1">Statisztika:</h1> 
+            <table class="table" style="border: 1px solid black;" id="table">
+              <thead>
+                <tr>
+                  <th scope="col" ></th>
+                  <th scope="col" >X</th>
+                  <th scope="col">O</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider">
+                <tr class="table-group-divider">
+                  <th scope="row">Nevek:</th>
+                  <td id="idekellx">-</td>
+                  <td id="idekelly">-</td>
+                </tr>
+                <tr class="table-group-divider">
+                  <th scope="row">Pontok:</th>
+                  <td id ="allas">-</td>
+                  <td id ="allaso">-</td>
+                </tr>
+                <tr class="table-group-divider"> 
+                  <th scope="row">Előny:</th>
+                  <td id ="elonyx">0</td>
+                  <td id ="elonyo">0</td>
+                </tr>
+                <tr class="table-group-divider">
+                  <th scope="row">Következik:</th>
+                  <td id ="x">-</td>
+                  <td id ="y">-</td>
+                </tr>
+                <tr class="table-group-divider">
+                  <th scope="row">Eredmény:</th>
+                  <td id ="nyertx">-</td>
+                  <td id ="nyerty">-</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+<!-------------------------------------------------------------------------------------------------------------------------> 
+</body>
+</html>
